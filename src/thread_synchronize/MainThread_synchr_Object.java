@@ -3,7 +3,7 @@ package thread_synchronize;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainThread_synchr {
+public class MainThread_synchr_Object {
     //дана коллекция в которую заносят данные 3 потока
     //1й заносит единицы,2й 2ки,3й тройки.Работать должны параллельно
     //данные каждого потока не должны пересекаться с другими потоками
@@ -11,9 +11,9 @@ public class MainThread_synchr {
     //если единичный поток заносит данные,то остальные его должны подождать
     public static void main(String[] args) throws InterruptedException {
         List<Integer> collection=new ArrayList<>();
-        Adder_synchr first=new Adder_synchr("first",1,5,collection);
-        Adder_synchr first2=new Adder_synchr("first2",2,4,collection);
-        Adder_synchr first3=new Adder_synchr("first3",3,1,collection);
+        Adder_synchr_Object first=new Adder_synchr_Object("first",1,5,collection);
+        Adder_synchr_Object first2=new Adder_synchr_Object("first2",2,4,collection);
+        Adder_synchr_Object first3=new Adder_synchr_Object("first3",3,1,collection);
         first.start();
         first2.start();
         first3.start();
